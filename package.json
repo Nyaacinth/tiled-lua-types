@@ -1,7 +1,7 @@
 {
-  "name": "tiled-types",
+  "name": "tiled-lua-types",
   "version": "1.3.0",
-  "description": "Type definitions of Tiled generated JSON",
+  "description": "Type definitions of Tiled generated Lua",
   "main": "types/index.d.ts",
   "types": "types",
   "repository": {

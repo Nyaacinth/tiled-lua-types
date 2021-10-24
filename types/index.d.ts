@@ -36,7 +36,7 @@ export interface TiledWangSet {
     cornercolors: TiledWangColor[];
     edgecolors: TiledWangColor[];
     name: string;
-    properties: TiledProperty[];
+    properties: TiledProperties;
     tile: number;
     wangtiles: TiledWangTile[];
 }
@@ -65,7 +65,7 @@ export interface TiledTileset {
     margin: number;
     name: string;
     objectalignment?: 'unspecified' | 'topleft' | 'top' | 'topright' | 'left' | 'center' | 'right' | 'bottomleft' | 'bottom' | 'bottomright';
-    properties?: TiledProperty[];
+    properties?: TiledProperties;
     source?: string;
     spacing: number;
     terrains?: TiledTerrain[];
@@ -100,7 +100,7 @@ export interface TiledTile {
     imagewidth?: number;
     objectgroup?: TiledLayerObjectgroup;
     probability?: number;
-    properties?: TiledProperty[];
+    properties?: TiledProperties;
     terrain?: number[];
     type?: string;
 }
@@ -118,7 +118,7 @@ export interface TiledFrame {
  */
 export interface TiledTerrain {
     name: string;
-    properties?: TiledProperty[];
+    properties?: TiledProperties;
     tile: number;
 }
 
@@ -165,7 +165,7 @@ export interface TiledObject {
     point?: boolean;
     polygon?: Point[];
     polyline?: Point[];
-    properties: TiledProperty[];
+    properties: TiledProperties;
     rotation: number;
     template?: string;
     text?: TiledText;
@@ -192,7 +192,7 @@ export interface TiledLayerAbstract<T extends TiledLayerType> {
     starty?: number;
     tintcolor?: string;
     opacity: number;
-    properties?: TiledProperty[];
+    properties?: TiledProperties;
     visible: boolean;
 }
 
@@ -243,7 +243,7 @@ export interface TiledMapAbstract<O extends TiledMapType> {
     backgroundcolor?: string;
     nextlayerid?: number;
     nextobjectid: number;
-    properties?: TiledProperty[];
+    properties?: TiledProperties;
     layers: TiledLayer[];
     tilesets: TiledTileset[];
     compressionlevel?: number;
@@ -286,21 +286,7 @@ export type TiledMap = TiledMapOrthogonal
 
 export type TiledPropertyValue = string | number | boolean;
 
-export type TiledPropertyType = 'string' | 'int' | 'float' | 'bool' | 'color' | 'file' | 'object';
-
-/**
- * @see https://doc.mapeditor.org/en/stable/reference/json-map-format/#property
- */
-export interface TiledPropertyAbstract<V extends TiledPropertyValue, T extends TiledPropertyType> {
-    name: string;
-    value: V;
-    type: T;
-}
-
-export type TiledProperty =
-    TiledPropertyAbstract<string, 'string' | 'color' | 'file'>
-    | TiledPropertyAbstract<number, 'int' | 'float' | 'object'>
-    | TiledPropertyAbstract<boolean, 'bool'>;
+export type TiledProperties = {[key: string]: TiledPropertyValue}
 
 export { };
 

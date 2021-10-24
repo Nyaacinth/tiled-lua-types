@@ -1,8 +1,10 @@
-# tiled-types
+# tiled-lua-types
 
-Type definitions of Tiled generated JSON https://github.com/bjorn/tiled.
+Forked from [tiled-types](https://github.com/Chnapy/tiled-types)
 
-[![Build Status](https://travis-ci.com/Chnapy/tiled-types.svg?branch=master)](https://travis-ci.com/Chnapy/tiled-types)
+Type definitions of Tiled generated Lua https://github.com/bjorn/tiled.
+
+<!-- [![Build Status](https://travis-ci.com/Chnapy/tiled-types.svg?branch=master)](https://travis-ci.com/Chnapy/tiled-types) -->
 
 Made for Tiled 1.4.
 
@@ -11,13 +13,13 @@ Based on its documentation https://doc.mapeditor.org/en/stable/reference/json-ma
 ## Installation
 
 ```
-npm install tiled-types
+yarn add -D Nyaacinth/tiled-lua-types
 ```
 
 ## Use
 
 ```typescript
-import TiledMap, { TiledLayerTilelayer } from "tiled-types";
+import TiledMap, { TiledLayerTilelayer } from "tiled-lua-types";
 
 // Assume we're in node context
 const map: TiledMap = fs.readFileSync('path/to/schema.json', 'utf8');
