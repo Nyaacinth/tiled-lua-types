@@ -36,7 +36,7 @@ export interface TiledWangSet {
     cornercolors: TiledWangColor[];
     edgecolors: TiledWangColor[];
     name: string;
-    properties: TiledProperties;
+    properties?: TiledProperties;
     tile: number;
     wangtiles: TiledWangTile[];
 }
@@ -165,7 +165,7 @@ export interface TiledObject {
     point?: boolean;
     polygon?: Point[];
     polyline?: Point[];
-    properties: TiledProperties;
+    properties?: TiledProperties;
     rotation: number;
     template?: string;
     text?: TiledText;
