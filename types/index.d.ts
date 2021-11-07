@@ -157,19 +157,17 @@ export interface TiledText {
  * @see https://doc.mapeditor.org/en/stable/reference/json-map-format/#object
  */
 export interface TiledObject {
-    ellipse?: boolean;
     gid?: number;
     height: number;
     id: number;
     name: string;
-    point?: boolean;
     polygon?: Point[];
     polyline?: Point[];
     properties?: TiledProperties;
     rotation: number;
-    template?: string;
     text?: TiledText;
     type: string;
+    shape: string;
     visible: boolean;
     width: number;
     x: number;
